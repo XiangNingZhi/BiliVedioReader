@@ -1,0 +1,14 @@
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\bin\Debug\BiliViewReader2.0.exe.config
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\bin\Debug\BiliViewReader2.0.exe
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\bin\Debug\BiliViewReader2.0.pdb
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\bin\Debug\Newtonsoft.Json.dll
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\bin\Debug\Newtonsoft.Json.pdb
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\bin\Debug\Newtonsoft.Json.xml
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2.0.csprojAssemblyReference.cache
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2._0.Form1.resources
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2._0.Properties.Resources.resources
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2.0.csproj.GenerateResource.cache
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2.0.csproj.CoreCompileInputs.cache
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2.0.csproj.CopyComplete
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2.0.exe
+D:\小玩意\BiliViewReader2.0\BiliViewReader2.0\obj\Debug\BiliViewReader2.0.pdb
