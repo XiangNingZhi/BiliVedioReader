@@ -74,7 +74,7 @@ namespace BiliViewReader2._0
             JToken data = json["data"];//取出键名为data的对象，里面包含各种数据
             int view = data["view"].Value<int>();//view为播放次数
             int danmaku = data["danmaku"].Value<int>();//danmaku为总弹幕数
-            return "播放数为:" + view + "，总弹幕数为:" + danmaku + "。    ID:" + Task.CurrentId;
+            return "播放数为:" + view + "，总弹幕数为:" + danmaku + "。";
         }
 
 
