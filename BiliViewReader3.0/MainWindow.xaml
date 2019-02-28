@@ -1,0 +1,31 @@
+﻿<Window x:Class="BiliViewReader3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BiliViewReader3"
+        mc:Ignorable="d"
+        Title="B站用户投稿数据获取3.0" Height="720" Width="1280">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.Background>
+            <ImageBrush x:Name="bgImg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="527,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170" Name="uidBox"/>
+        <Label Content="用户ID" HorizontalAlignment="Left" Margin="465,12,0,0" VerticalAlignment="Top"/>
+        <Button Content="查询" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Button_Click"/>
+        <ListView x:Name="ReaderView" HorizontalAlignment="Left" Height="616" Margin="0,66,0,0" VerticalAlignment="Top" Width="1265" Background="#01FFFFFF" SelectionMode="Single" MouseDoubleClick="ReaderView_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="av号" Width="100" DisplayMemberBinding="{Binding Path=aid}"/>
+                    <GridViewColumn Header="标题" Width="400" DisplayMemberBinding="{Binding Path=title}"/>
+                    <GridViewColumn Header="投稿时间" Width="300" DisplayMemberBinding="{Binding Path=created}"/>
+                    <GridViewColumn Header="视频长度" Width="150" DisplayMemberBinding="{Binding Path=length}"/>
+                    <GridViewColumn Header="播放数" Width="150" DisplayMemberBinding="{Binding Path=play}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="CountLabel" Content="视频数量：" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

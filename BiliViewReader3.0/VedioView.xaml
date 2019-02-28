@@ -1,0 +1,19 @@
+﻿<Window x:Class="BiliViewReader3.VedioView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BiliViewReader3"
+        mc:Ignorable="d"
+        Title="VedioView" Height="800" Width="800">
+    <Grid>
+        <Label x:Name="TitleLabel" Content="Label" Margin="0" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Center"/>
+        <TextBox x:Name="descriptionBox" HorizontalAlignment="Left" Height="240" Margin="10,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="775" IsReadOnly="True"/>
+        <Label x:Name="aidLabel" Content="Label" HorizontalAlignment="Left" Margin="71,30,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="createdLabel" Content="Label" HorizontalAlignment="Left" Margin="499,30,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lengthLabel" Content="Label" HorizontalAlignment="Left" Margin="71,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="playLabel" Content="Label" HorizontalAlignment="Left" Margin="499,60,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="titlePic" HorizontalAlignment="Left" Height="407" Margin="10,355,0,0" VerticalAlignment="Top" Width="775" Stretch="UniformToFill"/>
+
+    </Grid>
+</Window>
