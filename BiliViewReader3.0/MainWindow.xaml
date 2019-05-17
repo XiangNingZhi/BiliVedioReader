@@ -12,13 +12,14 @@
         </Grid.Background>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="527,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170" Name="uidBox"/>
         <Label Content="用户ID" HorizontalAlignment="Left" Margin="465,12,0,0" VerticalAlignment="Top"/>
-        <Button Content="查询" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Button_Click"/>
-        <ListView x:Name="ReaderView" HorizontalAlignment="Left" Height="616" Margin="0,66,0,0" VerticalAlignment="Top" Width="1265" Background="#01FFFFFF" SelectionMode="Single" MouseDoubleClick="ReaderView_MouseDoubleClick">
+        <Button x:Name="ID_btn" Content="查询" HorizontalAlignment="Left" Margin="715,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="ID_Select"/>
+        <Button x:Name="bg_btn" Content="添加背景图" HorizontalAlignment="Left" Margin="1165,31,0,0" VerticalAlignment="Top"  Width="100" Height="30" Click="bg_add" />
+        <ListView x:Name="ReaderView" HorizontalAlignment="Left" Height="616" Margin="0,66,0,0" VerticalAlignment="Top" Width="1265" Background="#01FFFFFF" SelectionMode="Single" MouseDoubleClick="ReaderView_MouseDoubleClick" GridViewColumnHeader.Click="View_Sort" Foreground="Black">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="av号" Width="100" DisplayMemberBinding="{Binding Path=aid}"/>
                     <GridViewColumn Header="标题" Width="400" DisplayMemberBinding="{Binding Path=title}"/>
-                    <GridViewColumn Header="投稿时间" Width="300" DisplayMemberBinding="{Binding Path=created}"/>
+                    <GridViewColumn Header="投稿时间" Width="300" DisplayMemberBinding="{Binding Path=created,StringFormat='yyyy年MM月dd日 HH:mm:ss'}"/>
                     <GridViewColumn Header="视频长度" Width="150" DisplayMemberBinding="{Binding Path=length}"/>
                     <GridViewColumn Header="播放数" Width="150" DisplayMemberBinding="{Binding Path=play}"/>
                 </GridView>

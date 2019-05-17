@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using BiliViewReader3.Model;
 using System.Net;
@@ -20,10 +17,11 @@ namespace BiliViewReader3
         /// <param name="uid">用户id</param>
         /// <param name="count">视频总数</param>
         /// <returns></returns>
-        public static List<UpMessage> GetUP(int uid, int count)
+        public static List<UpMessage> GetUP(int uid, int PageNum)
         {
             //请求第二次，根据获取到的总数和uid一页显示所有的视频数据
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"https://space.bilibili.com/ajax/member/getSubmitVideos?mid={uid}&pagesize={count}&page=1");
+            //注意：该API地址最多请求的每页条数是100，如果超过100则会返回参数错误，需分开加载
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"https://space.bilibili.com/ajax/member/getSubmitVideos?mid={uid}&pagesize=100&page={PageNum}");
             //伪造浏览器（UserAgent是IE的）
             request.UserAgent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)";
             WebResponse response = request.GetResponse();//获取response
@@ -50,7 +48,7 @@ namespace BiliViewReader3
                         length = item["length"].Value<string>(),
                         created = timeToString(item["created"].Value<string>()),
                         description = item["description"].Value<string>(),
-                        play = item["play"].Value<string>(),
+                        play = item["play"].Value<int>(),
                         pic = item["pic"].Value<string>()
                     };
                     vedios.Add(v);
@@ -104,7 +102,7 @@ namespace BiliViewReader3
         public static byte[] getPic(string url)
         {
             //请求图片网站
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http:"+url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http:" + url);
             //伪造浏览器（UserAgent是IE的）
             request.UserAgent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)";
             using (Stream stream = request.GetResponse().GetResponseStream())
@@ -124,16 +122,17 @@ namespace BiliViewReader3
 
 
         /// <summary>
-        /// 时间戳转字符串，内容为xxxx年xx月xx日 xx:xx:xx.xxx
+        /// 时间戳转日期
         /// </summary>
         /// <returns></returns>
-        public static string timeToString(string timestamp)
+        public static DateTime timeToString(string timestamp)
         {
             DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
             long lTime = long.Parse(timestamp + "0000000");
             TimeSpan toNow = new TimeSpan(lTime);
             DateTime time = dtStart.Add(toNow);
-            return $"{time.Year}年{time.Month}月{time.Day}日 {time.TimeOfDay}";
+            //return $"{time.Year}年{time.Month}月{time.Day}日 {time.TimeOfDay}";//废弃方案，以前直接转时间文本现在返回datetime方便ListView排序
+            return time;
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BiliViewReader3"
         mc:Ignorable="d"
         Title="VedioView" Height="800" Width="800">
-    <Grid>
+    <Grid Margin="0,0,0,0.5">
         <Label x:Name="TitleLabel" Content="Label" Margin="0" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Center"/>
         <TextBox x:Name="descriptionBox" HorizontalAlignment="Left" Height="240" Margin="10,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="775" IsReadOnly="True"/>
         <Label x:Name="aidLabel" Content="Label" HorizontalAlignment="Left" Margin="71,30,0,0" VerticalAlignment="Top"/>
@@ -14,6 +14,7 @@
         <Label x:Name="lengthLabel" Content="Label" HorizontalAlignment="Left" Margin="71,60,0,0" VerticalAlignment="Top"/>
         <Label x:Name="playLabel" Content="Label" HorizontalAlignment="Left" Margin="499,60,0,0" VerticalAlignment="Top"/>
         <Image x:Name="titlePic" HorizontalAlignment="Left" Height="407" Margin="10,355,0,0" VerticalAlignment="Top" Width="775" Stretch="UniformToFill"/>
+        <Button Content="保存封面" HorizontalAlignment="Left" Margin="711,86,0,0" VerticalAlignment="Top" Width="74" Click="Save_Click"/>
 
     </Grid>
 </Window>

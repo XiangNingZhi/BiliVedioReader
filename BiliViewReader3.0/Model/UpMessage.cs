@@ -23,7 +23,7 @@ namespace BiliViewReader3.Model
         /// <summary>
         /// 投稿时间
         /// </summary>
-        public string created { get; set; }
+        public DateTime created { get; set; }
         /// <summary>
         /// 视频长度
         /// </summary>
@@ -35,6 +35,6 @@ namespace BiliViewReader3.Model
         /// <summary>
         /// 播放数
         /// </summary>
-        public string play { get; set; }
+        public int play { get; set; }
     }
 }
