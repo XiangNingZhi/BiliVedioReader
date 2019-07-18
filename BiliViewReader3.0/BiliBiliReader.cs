@@ -48,7 +48,7 @@ namespace BiliViewReader3
                         length = item["length"].Value<string>(),
                         created = timeToString(item["created"].Value<string>()),
                         description = item["description"].Value<string>(),
-                        play = item["play"].Value<int>(),
+                        play = item["play"].Value<string>() == "--" ? -1 : item["play"].Value<int>(),//遇到了播放数有问题，B站上显示“--”的情况
                         pic = item["pic"].Value<string>()
                     };
                     vedios.Add(v);
